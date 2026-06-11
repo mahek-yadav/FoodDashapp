@@ -71,8 +71,8 @@
     padding: 0.75rem 1.25rem;
     font-weight: 800;
     font-size: 0.875rem;
-    color: rgb(var(--brand));
-    background: linear-gradient(135deg, rgb(var(--brand)) 0%, #fb8c00 45%, #ef3f2e 100%);
+    color: rgb(17,20,24);
+    background: rgb(var(--brand));
     box-shadow: 0 24px 80px rgba(var(--brand-rgb), 0.24);
     transition: transform .12s ease, box-shadow .12s ease;
     text-decoration: none;
@@ -80,20 +80,19 @@
 
   .flame-button:hover {
     transform: scale(1.02);
-    box-shadow: 0 28px 90px rgba(var(--brand-rgb), 0.28);
-  }
+    box-shadow: 0 28px 90px rgba(var(--brand-rgb), 0.32);
   }
 
   .ghost-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/10 bg-white/70 px-5 py-3 text-sm font-bold text-ink-900 transition;
-    border-color: rgba(var(--brand-rgb), 0.15);
-    color: rgb(var(--brand));
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition;
+    background: rgb(var(--brand));
+    color: rgb(17,20,24);
+    border: 1px solid rgba(var(--brand-rgb), 0.12);
   }
 
   .ghost-button:hover {
-    border-color: rgba(var(--brand-rgb), 0.3);
-    color: rgb(var(--brand));
-  }
+    background: rgb(var(--brand));
+    filter: brightness(0.98);
   }
 
   .section-pad {
@@ -112,6 +111,5 @@
   .focus-ring {
     @apply focus:outline-none;
     box-shadow: 0 0 0 4px rgba(var(--brand-rgb), 0.15);
-  }
   }
 }
