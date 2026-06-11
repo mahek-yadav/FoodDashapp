@@ -20,6 +20,12 @@ export default function HomePage() {
     <PageTransition>
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-warm" />
+        {/* Full-bleed hero background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${assets.heroFeast})` }}
+          aria-hidden="true"
+        />
         <div className="page-shell relative grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[.95fr_1.05fr]">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
             <span className="pill mb-5 bg-white/10 text-flame-300 backdrop-blur-xl">
@@ -56,12 +62,12 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.94, rotate: 2 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative"
+            className="relative z-10"
           >
-            <img src={assets.heroFeast} alt="Premium Indian food feast" className="w-full rounded-[42px] shadow-glow" />
+            {/* Small overlays positioned over the full-bleed background */}
             <motion.div
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
