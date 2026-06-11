@@ -1,0 +1,22 @@
+<svg width="680" height="780" viewBox="0 0 680 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="780" rx="48" fill="#020607"/>
+  <rect x="185" y="58" width="310" height="650" rx="52" fill="#07181D" stroke="#243840" stroke-width="10"/>
+  <rect x="217" y="108" width="246" height="548" rx="34" fill="#0B2027"/>
+  <rect x="244" y="145" width="126" height="20" rx="10" fill="#FFF7E6" opacity=".85"/>
+  <rect x="244" y="190" width="192" height="88" rx="26" fill="url(#phoneGradient)"/>
+  <circle cx="289" cy="235" r="30" fill="#FFF7E6"/>
+  <rect x="244" y="308" width="192" height="74" rx="22" fill="#102B34"/>
+  <rect x="244" y="406" width="192" height="74" rx="22" fill="#102B34"/>
+  <rect x="244" y="504" width="192" height="74" rx="22" fill="#102B34"/>
+  <circle cx="410" cy="346" r="18" fill="#FFB703"/>
+  <circle cx="410" cy="444" r="18" fill="#35C46F"/>
+  <circle cx="410" cy="542" r="18" fill="#EF3F2E"/>
+  <rect x="281" y="621" width="118" height="12" rx="6" fill="#FFF7E6" opacity=".8"/>
+  <defs>
+    <linearGradient id="phoneGradient" x1="244" y1="190" x2="442" y2="282" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB703"/>
+      <stop offset=".5" stop-color="#FB8C00"/>
+      <stop offset="1" stop-color="#EF3F2E"/>
+    </linearGradient>
+  </defs>
+</svg>
