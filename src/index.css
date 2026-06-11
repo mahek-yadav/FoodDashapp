@@ -26,6 +26,13 @@
     background: #020607;
   }
 
+  /* Brand color: rgb(255,225,0) used for buttons and highlights */
+  :root {
+    --brand: 255 225 0; /* store as RGB triple for rgba usage */
+    --brand-rgb: 255,225,0;
+    --brand-opaque: rgba(var(--brand), 0.24);
+  }
+
   button,
   input,
   textarea,
@@ -56,11 +63,37 @@
   }
 
   .flame-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-flame-gradient px-5 py-3 text-sm font-extrabold text-ink-950 shadow-glow transition hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-flame-300 focus:ring-offset-2 focus:ring-offset-ink-950;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 800;
+    font-size: 0.875rem;
+    color: rgb(var(--brand));
+    background: linear-gradient(135deg, rgb(var(--brand)) 0%, #fb8c00 45%, #ef3f2e 100%);
+    box-shadow: 0 24px 80px rgba(var(--brand-rgb), 0.24);
+    transition: transform .12s ease, box-shadow .12s ease;
+    text-decoration: none;
+  }
+
+  .flame-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 28px 90px rgba(var(--brand-rgb), 0.28);
+  }
   }
 
   .ghost-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/10 bg-white/70 px-5 py-3 text-sm font-bold text-ink-900 transition hover:border-flame-400 hover:text-flame-600 dark:border-white/10 dark:bg-white/[0.06] dark:text-cream dark:hover:text-flame-300;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/10 bg-white/70 px-5 py-3 text-sm font-bold text-ink-900 transition;
+    border-color: rgba(var(--brand-rgb), 0.15);
+    color: rgb(var(--brand));
+  }
+
+  .ghost-button:hover {
+    border-color: rgba(var(--brand-rgb), 0.3);
+    color: rgb(var(--brand));
+  }
   }
 
   .section-pad {
@@ -77,6 +110,8 @@
   }
 
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-flame-300 focus:ring-offset-2 focus:ring-offset-cream dark:focus:ring-offset-ink-950;
+    @apply focus:outline-none;
+    box-shadow: 0 0 0 4px rgba(var(--brand-rgb), 0.15);
+  }
   }
 }
