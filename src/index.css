@@ -28,8 +28,8 @@
 
   /* Brand color: rgb(255,225,0) used for buttons and highlights */
   :root {
-    --brand: 255 225 0; /* store as RGB triple for rgba usage */
-    --brand-rgb: 255,225,0;
+    --brand: 248 195 72; /* new brand RGB: rgb(248 195 72) */
+    --brand-rgb: 248,195,72;
     --brand-opaque: rgba(var(--brand), 0.24);
   }
 
@@ -107,6 +107,27 @@
     @apply rounded-full px-3 py-1 text-xs font-black;
     background: rgb(var(--brand));
     color: rgb(17,20,24);
+  }
+
+  /* Map legacy flame-* utilities to the new brand color so existing markup updates */
+  .text-flame-300,
+  .text-flame-500,
+  .text-flame-600 {
+    color: rgb(var(--brand)) !important;
+  }
+
+  .bg-flame-400,
+  .bg-flame-500 {
+    background: rgb(var(--brand)) !important;
+  }
+
+  /* alpha utility (Tailwind-style class with slash) */
+  .bg-flame-400\/15 {
+    background-color: rgba(var(--brand-rgb), 0.15) !important;
+  }
+
+  .bg-flame-gradient {
+    background: linear-gradient(135deg, rgb(var(--brand)) 0%, rgba(var(--brand-rgb), 0.9) 100%);
   }
 
   .section-pad {
