@@ -109,6 +109,12 @@
     color: rgb(17,20,24);
   }
 
+  .chip-brand {
+    @apply rounded-2xl px-3 py-2 text-xs font-bold;
+    background: rgb(var(--brand));
+    color: rgb(17,20,24);
+  }
+
   /* Map legacy flame-* utilities to the new brand color so existing markup updates */
   .text-flame-300,
   .text-flame-500,
