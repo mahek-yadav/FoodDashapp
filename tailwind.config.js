@@ -46,7 +46,7 @@ export default {
           "radial-gradient(circle at 20% 20%, rgba(255, 183, 3, 0.18), transparent 28%), radial-gradient(circle at 82% 18%, rgba(239, 63, 46, 0.18), transparent 30%), linear-gradient(135deg, #020607 0%, #07181d 54%, #130f09 100%)",
         "premium-card":
           "linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035))",
-        "flame-gradient": "linear-gradient(135deg, #ffb703 0%, #fb8c00 45%, #ef3f2e 100%)",
+  "flame-gradient": "linear-gradient(135deg, rgb(248,195,72) 0%, rgb(230,160,60) 45%, rgb(218,155,52) 100%)",
         "fresh-gradient": "linear-gradient(135deg, #35c46f 0%, #ffb703 55%, #ef3f2e 100%)",
       },
       keyframes: {
