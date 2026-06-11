@@ -37,7 +37,7 @@ export default function RestaurantCard({ restaurant, index = 0 }) {
         >
           <Heart size={18} fill={saved ? "currentColor" : "none"} />
         </button>
-        <span className="absolute left-3 top-3 pill-brand">
+        <span className="absolute left-3 top-3 rounded-full bg-flame-gradient px-3 py-1 text-xs font-black text-ink-950">
           {restaurant.offers[0]}
         </span>
       </div>
@@ -52,7 +52,7 @@ export default function RestaurantCard({ restaurant, index = 0 }) {
               <MapPin size={14} /> {restaurant.city}
             </p>
           </div>
-          <span className="flex shrink-0 items-center gap-1 chip-brand">
+          <span className="flex shrink-0 items-center gap-1 rounded-full bg-mint-500 px-3 py-1 text-xs font-black text-white">
             <Star size={13} fill="currentColor" /> {restaurant.rating}
           </span>
         </div>
@@ -60,13 +60,13 @@ export default function RestaurantCard({ restaurant, index = 0 }) {
         <p className="mt-4 line-clamp-2 text-sm leading-6 text-ink-700 dark:text-cream/65">{restaurant.description}</p>
 
         <div className="mt-5 grid grid-cols-3 gap-2 text-xs font-bold text-ink-700 dark:text-cream/70">
-          <span className="chip-brand">
+          <span className="rounded-2xl bg-ink-950/5 px-3 py-2 dark:bg-white/10">
             <Timer className="mb-1" size={15} /> {restaurant.deliveryTime} min
           </span>
-          <span className="chip-brand">
+          <span className="rounded-2xl bg-ink-950/5 px-3 py-2 dark:bg-white/10">
             <Utensils className="mb-1" size={15} /> {restaurant.cuisine[0]}
           </span>
-          <span className="chip-brand">
+          <span className="rounded-2xl bg-ink-950/5 px-3 py-2 dark:bg-white/10">
             {formatINR(restaurant.priceForTwo)}
             <span className="block text-[10px]">for two</span>
           </span>
