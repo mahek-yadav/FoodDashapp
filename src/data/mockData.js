@@ -4,7 +4,7 @@ import paneerImg from "../assets/paneer-curry.jpg";
 import chaatImg from "../assets/street-chaat.jpg";
 import pizzaImg from "../assets/pizza-slice.jpg";
 import dessertImg from "../assets/dessert-bowl.jpg";
-import heroFeast from "../assets/hero-feast.svg";
+import heroFeast from "../assets/hero-feast.avif";
 import appPhone from "../assets/app-phone.svg";
 
 export const assets = {
