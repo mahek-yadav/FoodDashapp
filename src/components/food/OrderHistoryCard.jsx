@@ -15,7 +15,7 @@ export default function OrderHistoryCard({ order }) {
             <Clock size={15} /> {new Date(order.placedAt).toLocaleString("en-IN")}
           </p>
         </div>
-        <span className="pill bg-mint-500 text-white">
+        <span className="pill pill-brand">
           <Truck size={16} /> {order.status}
         </span>
       </div>

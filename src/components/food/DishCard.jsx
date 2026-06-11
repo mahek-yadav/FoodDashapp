@@ -30,7 +30,7 @@ export default function DishCard({ dish, onCustomize, index = 0, compact = false
           <Heart size={17} fill={saved ? "currentColor" : "none"} />
         </button>
         {dish.bestseller ? (
-          <span className="absolute left-3 top-3 rounded-full bg-flame-gradient px-3 py-1 text-xs font-black text-ink-950">
+          <span className="absolute left-3 top-3 pill-brand">
             Best Seller
           </span>
         ) : null}

@@ -27,8 +27,8 @@ export default function HomePage() {
         />
         <div className="page-shell relative grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[.95fr_1.05fr]">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-            <span className="pill mb-5 bg-white/10 text-flame-300 backdrop-blur-xl">
-              <Sparkles size={16} /> India&apos;s Fastest Way To Satisfy Your Cravings
+            <span className="pill mb-5 pill-brand backdrop-blur-xl">
+              India&apos;s Fastest Way To Satisfy Your Cravings
             </span>
             <h1 className="font-display text-5xl font-black leading-tight text-cream sm:text-6xl lg:text-7xl">
               Discover India&apos;s Most Loved Food
@@ -153,7 +153,7 @@ export default function HomePage() {
         <div className="page-shell">
           <div className="grid items-center gap-8 overflow-hidden rounded-[40px] bg-ink-950 p-6 text-cream shadow-card lg:grid-cols-[1fr_.8fr] lg:p-10">
             <div>
-              <span className="pill bg-white/10 text-flame-300">
+              <span className="pill pill-brand">
                 <Gift size={16} /> Download App
               </span>
               <h2 className="mt-5 font-display text-4xl font-black sm:text-5xl">FoodDash in your pocket.</h2>

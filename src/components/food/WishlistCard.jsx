@@ -23,10 +23,10 @@ export default function WishlistCard({ item, type, onRemove }) {
           </button>
         </div>
         <div className="mt-4 flex flex-wrap items-center gap-2 text-xs font-black">
-          <span className="pill bg-mint-500 px-3 py-1 text-white">
+          <span className="pill pill-brand px-3 py-1">
             <Star size={13} fill="currentColor" /> {item.rating}
           </span>
-          <span className="pill bg-ink-950/5 px-3 py-1 text-ink-800 dark:bg-white/10 dark:text-cream/75">
+          <span className="pill pill-brand px-3 py-1">
             {type === "restaurant" ? `${item.deliveryTime} min` : formatINR(item.price)}
           </span>
         </div>

@@ -76,17 +76,17 @@ export default function RestaurantDetailsPage() {
           </Link>
           <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-end">
             <div>
-              <span className="pill bg-flame-gradient text-ink-950">{restaurant.offers[0]}</span>
+              <span className="pill pill-brand">{restaurant.offers[0]}</span>
               <h1 className="mt-5 font-display text-5xl font-black leading-tight sm:text-6xl">{restaurant.name}</h1>
               <p className="mt-4 max-w-3xl text-base leading-8 text-cream/70">{restaurant.description}</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <span className="pill bg-white/10 text-cream">
-                  <Star className="text-flame-300" size={16} fill="currentColor" /> {restaurant.rating} · {restaurant.reviews} reviews
+                <span className="pill pill-brand">
+                  <Star className="text-ink-950" size={16} fill="currentColor" /> {restaurant.rating} · {restaurant.reviews} reviews
                 </span>
-                <span className="pill bg-white/10 text-cream">
+                <span className="pill pill-brand">
                   <MapPin size={16} /> {restaurant.city}
                 </span>
-                <span className="pill bg-white/10 text-cream">
+                <span className="pill pill-brand">
                   <Clock size={16} /> {delivery.eta}
                 </span>
               </div>

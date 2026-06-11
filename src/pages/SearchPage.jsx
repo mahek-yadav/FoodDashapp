@@ -68,7 +68,7 @@ export default function SearchPage() {
                 key={suggestion}
                 type="button"
                 onClick={() => setQuery(suggestion)}
-                className="pill bg-ink-950/5 text-ink-800 hover:bg-flame-400 hover:text-ink-950 dark:bg-white/10 dark:text-cream/75"
+                className="pill pill-brand"
               >
                 <Sparkles size={14} /> {suggestion}
               </button>
