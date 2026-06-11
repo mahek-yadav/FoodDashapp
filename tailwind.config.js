@@ -20,9 +20,9 @@ export default {
           50: "#fff8e6",
           100: "#ffefbf",
           300: "#ffd166",
-          400: "#ffb703",
-          500: "#fb8c00",
-          600: "#e85d04",
+          400: "rgb(248,195,72)",
+          500: "rgb(230,160,60)",
+          600: "rgb(218,155,52)",
         },
         masala: {
           400: "#ff5a3c",
@@ -47,7 +47,7 @@ export default {
         "premium-card":
           "linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035))",
   "flame-gradient": "linear-gradient(135deg, rgb(248,195,72) 0%, rgb(230,160,60) 45%, rgb(218,155,52) 100%)",
-        "fresh-gradient": "linear-gradient(135deg, #35c46f 0%, #ffb703 55%, #ef3f2e 100%)",
+  "fresh-gradient": "linear-gradient(135deg, #35c46f 0%, rgb(248,195,72) 55%, rgb(218,155,52) 100%)",
       },
       keyframes: {
         shimmer: {

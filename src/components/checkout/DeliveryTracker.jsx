@@ -42,7 +42,7 @@ export default function DeliveryTracker({ order }) {
             <MapPin className="mb-1" size={18} /> You
           </div>
           <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M18 26 C 38 22, 42 48, 56 52 S 73 70, 86 78" stroke="#ffb703" strokeWidth="1.3" strokeDasharray="3 3" fill="none" />
+            <path d="M18 26 C 38 22, 42 48, 56 52 S 73 70, 86 78" stroke="rgb(248,195,72)" strokeWidth="1.3" strokeDasharray="3 3" fill="none" />
           </svg>
           <motion.div
             className="absolute grid h-14 w-14 place-items-center rounded-full bg-flame-gradient text-ink-950 shadow-glow"

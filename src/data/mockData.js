@@ -13,14 +13,14 @@ export const assets = {
 };
 
 export const categories = [
-  { id: "north-indian", name: "North Indian", image: paneerImg, accent: "#fb8c00" },
+  { id: "north-indian", name: "North Indian", image: paneerImg, accent: "rgb(230,160,60)" },
   { id: "south-indian", name: "South Indian", image: dosaImg, accent: "#35c46f" },
-  { id: "street-food", name: "Street Food", image: chaatImg, accent: "#ef3f2e" },
-  { id: "biryani", name: "Biryani", image: biryaniImg, accent: "#ffb703" },
-  { id: "chinese", name: "Chinese", image: chaatImg, accent: "#fb8c00" },
-  { id: "pizza", name: "Pizza", image: pizzaImg, accent: "#ef3f2e" },
+  { id: "street-food", name: "Street Food", image: chaatImg, accent: "rgb(218,155,52)" },
+  { id: "biryani", name: "Biryani", image: biryaniImg, accent: "rgb(248,195,72)" },
+  { id: "chinese", name: "Chinese", image: chaatImg, accent: "rgb(230,160,60)" },
+  { id: "pizza", name: "Pizza", image: pizzaImg, accent: "rgb(218,155,52)" },
   { id: "burgers", name: "Burgers", image: pizzaImg, accent: "#35c46f" },
-  { id: "desserts", name: "Desserts", image: dessertImg, accent: "#ffb703" },
+  { id: "desserts", name: "Desserts", image: dessertImg, accent: "rgb(248,195,72)" },
   { id: "beverages", name: "Beverages", image: dessertImg, accent: "#35c46f" },
 ];
 
