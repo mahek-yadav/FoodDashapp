@@ -1,9 +1,9 @@
-import biryaniImg from "../assets/biryani-bowl.svg";
-import dosaImg from "../assets/dosa-plate.svg";
-import paneerImg from "../assets/paneer-curry.svg";
-import chaatImg from "../assets/street-chaat.svg";
-import pizzaImg from "../assets/pizza-slice.svg";
-import dessertImg from "../assets/dessert-bowl.svg";
+import biryaniImg from "../assets/biryani-bowl.jpg";
+import dosaImg from "../assets/dosa-plate.jpg";
+import paneerImg from "../assets/paneer-curry.jpg";
+import chaatImg from "../assets/street-chaat.jpg";
+import pizzaImg from "../assets/pizza-slice.jpg";
+import dessertImg from "../assets/dessert-bowl.jpg";
 import heroFeast from "../assets/hero-feast.svg";
 import appPhone from "../assets/app-phone.svg";
 
