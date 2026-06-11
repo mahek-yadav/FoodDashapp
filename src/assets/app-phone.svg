@@ -8,9 +8,9 @@
   <rect x="244" y="308" width="192" height="74" rx="22" fill="#102B34"/>
   <rect x="244" y="406" width="192" height="74" rx="22" fill="#102B34"/>
   <rect x="244" y="504" width="192" height="74" rx="22" fill="#102B34"/>
-  <circle cx="410" cy="346" r="18" fill="#FFB703"/>
+  <circle cx="410" cy="346" r="18" fill="rgb(248,195,72)"/>
   <circle cx="410" cy="444" r="18" fill="#35C46F"/>
-  <circle cx="410" cy="542" r="18" fill="#EF3F2E"/>
+  <circle cx="410" cy="542" r="18" fill="rgb(218,155,52)"/>
   <rect x="281" y="621" width="118" height="12" rx="6" fill="#FFF7E6" opacity=".8"/>
   <defs>
     <linearGradient id="phoneGradient" x1="244" y1="190" x2="442" y2="282" gradientUnits="userSpaceOnUse">

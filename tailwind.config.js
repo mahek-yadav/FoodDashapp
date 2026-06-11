@@ -37,13 +37,13 @@ export default {
         cream: "#fff7e6",
       },
       boxShadow: {
-        glow: "0 24px 80px rgba(251, 140, 0, 0.24)",
+        glow: "0 24px 80px rgba(248,195,72, 0.24)",
         card: "0 24px 70px rgba(0, 0, 0, 0.22)",
         soft: "0 18px 42px rgba(8, 14, 18, 0.14)",
       },
       backgroundImage: {
         "radial-warm":
-          "radial-gradient(circle at 20% 20%, rgba(255, 183, 3, 0.18), transparent 28%), radial-gradient(circle at 82% 18%, rgba(239, 63, 46, 0.18), transparent 30%), linear-gradient(135deg, #020607 0%, #07181d 54%, #130f09 100%)",
+          "radial-gradient(circle at 20% 20%, rgba(248,195,72, 0.18), transparent 28%), radial-gradient(circle at 82% 18%, rgba(239, 63, 46, 0.18), transparent 30%), linear-gradient(135deg, #020607 0%, #07181d 54%, #130f09 100%)",
         "premium-card":
           "linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035))",
   "flame-gradient": "linear-gradient(135deg, rgb(248,195,72) 0%, rgb(230,160,60) 45%, rgb(218,155,52) 100%)",
