@@ -21,8 +21,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-warm" />
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${assets.heroFeast})` }}
+          className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+          style={{ backgroundImage: `url(${assets.heroFeast})`, backgroundPosition: 'right center' }}
           aria-hidden="true"
         />
         <div className="page-shell relative grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[.95fr_1.05fr]">
