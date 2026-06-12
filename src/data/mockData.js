@@ -378,7 +378,7 @@ const baseMenu = [
     category: "Chinese",
     price: 180,
     restaurantId: "spice-curry-cafe",
-    image: chaatImg,
+    image: hakkaImg,
     veg: true,
     spice: "Medium",
     rating: 4.3,
