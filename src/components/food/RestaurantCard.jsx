@@ -37,7 +37,7 @@ export default function RestaurantCard({ restaurant, index = 0 }) {
         >
           <Heart size={18} fill={saved ? "currentColor" : "none"} />
         </button>
-        <span className="absolute left-3 top-3 rounded-full bg-flame-gradient px-3 py-1 text-xs font-black text-ink-950">
+        <span className="absolute left-3 top-3 pill-brand">
           {restaurant.offers[0]}
         </span>
       </div>
