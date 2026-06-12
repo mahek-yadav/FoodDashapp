@@ -1,6 +1,5 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState } from "react";
 import AppLayout from "./components/layout/AppLayout";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
