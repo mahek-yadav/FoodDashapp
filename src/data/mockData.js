@@ -7,6 +7,8 @@ import pizzaImg from "../assets/pizza-slice.jpg";
 import vegManchurianImg from "../assets/veg-manchurian.jpg";
 import burgerImg from "../assets/burger.webp";
 import dessertImg from "../assets/dessert-bowl.jpg";
+import gulabJamunImg from "../assets/gulab-jamun.webp";
+import rasmalaiImg from "../assets/rasmalai.jpg";
 import beverageImg from "../assets/beverage.jpg";
 import heroFeast from "../assets/hero-feast.avif";
 import appPhone from "../assets/app-phone.svg";
@@ -451,7 +453,7 @@ const baseMenu = [
     category: "Desserts",
     price: 80,
     restaurantId: "gujarat-thali-palace",
-    image: dessertImg,
+    image: gulabJamunImg,
     veg: true,
     spice: "Mild",
     rating: 4.7,
@@ -463,7 +465,7 @@ const baseMenu = [
     category: "Desserts",
     price: 120,
     restaurantId: "gujarat-thali-palace",
-    image: dessertImg,
+    image: rasmalaiImg,
     veg: true,
     spice: "Mild",
     rating: 4.8,
