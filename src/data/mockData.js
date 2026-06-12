@@ -2,6 +2,7 @@ import biryaniImg from "../assets/biryani-bowl.jpg";
 import dosaImg from "../assets/dosa-plate.jpg";
 import paneerImg from "../assets/paneer-curry.jpg";
 import chaatImg from "../assets/street-chaat.jpg";
+import hakkaImg from "../assets/hakka-noodles.jpg";
 import pizzaImg from "../assets/pizza-slice.jpg";
 import burgerImg from "../assets/burger.webp";
 import dessertImg from "../assets/dessert-bowl.jpg";
@@ -19,7 +20,7 @@ export const categories = [
   { id: "south-indian", name: "South Indian", image: dosaImg, accent: "#35c46f" },
   { id: "street-food", name: "Street Food", image: chaatImg, accent: "rgb(218,155,52)" },
   { id: "biryani", name: "Biryani", image: biryaniImg, accent: "rgb(248,195,72)" },
-  { id: "chinese", name: "Chinese", image: chaatImg, accent: "rgb(230,160,60)" },
+  { id: "chinese", name: "Chinese", image: hakkaImg, accent: "rgb(230,160,60)" },
   { id: "pizza", name: "Pizza", image: pizzaImg, accent: "rgb(218,155,52)" },
   { id: "burgers", name: "Burgers", image: burgerImg, accent: "#35c46f" },
   { id: "desserts", name: "Desserts", image: dessertImg, accent: "rgb(248,195,72)" },
