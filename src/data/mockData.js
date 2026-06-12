@@ -17,7 +17,7 @@ import pavBhajiImg from "../assets/pav-bhaji.jpg";
 import vadaPavImg from "../assets/vada-pav.jpg";
 import dabeliImg from "../assets/dabeli.avif";
 import mysoreDosaImg from "../assets/mysore-dosa.jpg";
-import idliSambarImg from "../assets/idli-sambar.jpg";
+import idliSambarImg from "../assets/idli-sambar.webp";
 import vegBiryaniImg from "../assets/veg-biryani.jpg";
 import hyderabadiBiryaniImg from "../assets/hyderabadi-biryani.jpg";
 import heroFeast from "../assets/hero-feast.avif";
