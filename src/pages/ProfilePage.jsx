@@ -22,7 +22,7 @@ export default function ProfilePage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {links.map(({ to, label, icon: Icon }) => (
               <Link key={to} to={to} className="glass-panel rounded-[28px] p-5 transition hover:-translate-y-1">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-flame-gradient text-ink-950">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl icon-brand-bg text-ink-950">
                   <Icon size={22} />
                 </span>
                 <h2 className="mt-5 font-display text-2xl font-black">{label}</h2>

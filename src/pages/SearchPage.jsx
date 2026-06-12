@@ -70,7 +70,7 @@ export default function SearchPage() {
                 onClick={() => setQuery(suggestion)}
                 className="pill pill-brand"
               >
-                <Sparkles size={14} /> {suggestion}
+                {suggestion}
               </button>
             ))}
           </div>

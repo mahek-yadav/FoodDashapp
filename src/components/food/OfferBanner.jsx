@@ -1,26 +1,73 @@
 import { motion } from "framer-motion";
 import { Copy, Gift } from "lucide-react";
 
+const palettes = [
+  ["#FFB84C", "#FF6A3D"],
+  ["#43D07A", "#FFD36F"],
+  ["#FF7A5A", "#FFCD69"],
+  ["#8A5AFF", "#FF7A3D"],
+];
+
 export default function OfferBanner({ offer, index = 0 }) {
+  const palette = palettes[index % palettes.length];
+  const bg = `linear-gradient(135deg, ${palette[0]}, ${palette[1]})`;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.05 }}
-      whileHover={{ y: -5 }}
-      className={`relative overflow-hidden rounded-[28px] bg-gradient-to-br ${offer.gradient} p-6 text-ink-950 shadow-glow`}
+      whileHover={{ scale: 1.02 }}
+      className="relative overflow-hidden rounded-[36px] p-6 text-ink-950 shadow-glow flex flex-col justify-between"
+      style={{ background: bg }}
     >
-      <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/25" />
-      <div className="absolute -bottom-16 left-10 h-36 w-36 rounded-full bg-ink-950/10" />
-      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/75">
-        <Gift size={23} />
-      </span>
-      <h3 className="mt-5 font-display text-2xl font-black">{offer.title}</h3>
-      <p className="mt-2 text-sm font-bold">{offer.value}</p>
-      <div className="mt-6 flex items-center justify-between rounded-full bg-white/75 px-4 py-3">
-        <span className="text-sm font-black">{offer.code}</span>
-        <Copy size={17} />
+      {/* moving reel background: a horizontally scrolling decorative strip */}
+      <div className="absolute inset-x-0 top-0 h-24 overflow-hidden pointer-events-none">
+        <div className="offer-reel">
+          <div className="offer-reel-track">
+            {/* repeated decorative cells - simple circles to give motion */}
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="offer-reel-cell" />
+            ))}
+          </div>
+          <div className="offer-reel-track" aria-hidden>
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="offer-reel-cell" />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 flex items-start gap-4 flex-grow">
+        <span className="grid h-14 w-14 place-items-center rounded-3xl bg-white/90 shadow-sm">
+          <Gift size={24} />
+        </span>
+        <div>
+          <h3 className="font-display text-2xl font-black text-ink-950">{offer.title}</h3>
+          <p className="mt-1 text-sm font-bold text-ink-900/80">{offer.value}</p>
+        </div>
+      </div>
+
+      <div className="mt-6 flex items-center justify-between">
+        <div className="rounded-full bg-white/95 px-4 py-3 font-black shadow-md shimmer-pill" style={{ minWidth: 160 }}>
+          <span className="text-sm">{offer.code}</span>
+        </div>
+
+        <motion.button
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.95 }}
+          className="grid h-11 w-11 place-items-center rounded-full bg-white/90 shadow-sm"
+          aria-label={`Copy ${offer.code}`}
+          onClick={async () => {
+            try {
+              await navigator.clipboard.writeText(offer.code);
+            } catch (e) {
+              /* ignore clipboard errors silently */
+            }
+          }}
+        >
+          <Copy size={18} />
+        </motion.button>
       </div>
     </motion.article>
   );

@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="absolute inset-0 hero-left-fade" aria-hidden="true" />
         <div className="page-shell relative grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[.95fr_1.05fr]">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-            <span className="pill mb-5 pill-brand backdrop-blur-xl">
+            <span className="pill mb-5 pill-illustrious backdrop-blur-xl">
               India&apos;s Fastest Way To Satisfy Your Cravings
             </span>
             <h1 className="font-display text-5xl font-black leading-tight text-cream sm:text-6xl lg:text-7xl">

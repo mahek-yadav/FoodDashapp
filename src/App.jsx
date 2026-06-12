@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useState } from "react";
 import AppLayout from "./components/layout/AppLayout";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
@@ -21,8 +22,9 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+    <>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
         <Route element={<AppLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/restaurants" element={<RestaurantsPage />} />
@@ -40,7 +42,8 @@ export default function App() {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
-      </Routes>
-    </AnimatePresence>
+        </Routes>
+      </AnimatePresence>
+    </>
   );
 }

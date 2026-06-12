@@ -45,7 +45,7 @@ export default function DishCard({ dish, onCustomize, index = 0, compact = false
             </p>
             <h3 className="mt-2 font-display text-xl font-black text-ink-950 dark:text-cream">{dish.name}</h3>
           </div>
-          <span className="flex items-center gap-1 rounded-full bg-ink-950 px-3 py-1 text-xs font-black text-cream dark:bg-cream dark:text-ink-950">
+          <span className="flex items-center gap-1 rounded-full bg-mint-500 px-3 py-1 text-xs font-black text-white">
             <Star size={13} fill="currentColor" /> {dish.rating}
           </span>
         </div>

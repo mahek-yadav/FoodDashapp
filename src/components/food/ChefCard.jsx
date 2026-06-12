@@ -11,7 +11,7 @@ export default function ChefCard({ chef, index = 0 }) {
       whileHover={{ y: -5 }}
       className="glass-panel overflow-hidden rounded-[28px] p-3"
     >
-      <img src={chef.image} alt={chef.name} className="h-48 w-full rounded-[22px] object-cover" loading="lazy" />
+  <img src={chef.image} alt={chef.name} className="h-48 w-full rounded-[22px] object-cover object-top" loading="lazy" />
       <div className="p-3">
         <div className="flex items-start justify-between gap-4">
           <div>

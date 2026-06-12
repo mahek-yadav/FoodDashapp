@@ -7,6 +7,9 @@ import { formatINR } from "../../utils/currency";
 export default function RestaurantCard({ restaurant, index = 0 }) {
   const { isRestaurantSaved, toggleRestaurant } = useWishlist();
   const saved = isRestaurantSaved(restaurant.id);
+  // defensive: some mocked restaurants may miss offers or cuisine arrays
+  const firstOffer = restaurant?.offers?.[0];
+  const firstCuisine = restaurant?.cuisine?.[0] ?? (Array.isArray(restaurant?.cuisine) ? restaurant.cuisine.join(", ") : "Various");
 
   return (
     <motion.article
@@ -37,9 +40,11 @@ export default function RestaurantCard({ restaurant, index = 0 }) {
         >
           <Heart size={18} fill={saved ? "currentColor" : "none"} />
         </button>
-        <span className="absolute left-3 top-3 pill-brand">
-          {restaurant.offers[0]}
-        </span>
+        {firstOffer && (
+          <span className="absolute left-3 top-3 pill-brand">
+            {firstOffer}
+          </span>
+        )}
       </div>
 
       <div className="p-3">
@@ -64,7 +69,7 @@ export default function RestaurantCard({ restaurant, index = 0 }) {
             <Timer className="mb-1" size={15} /> {restaurant.deliveryTime} min
           </span>
           <span className="rounded-2xl bg-ink-950/5 px-3 py-2 dark:bg-white/10">
-            <Utensils className="mb-1" size={15} /> {restaurant.cuisine[0]}
+            <Utensils className="mb-1" size={15} /> {firstCuisine}
           </span>
           <span className="rounded-2xl bg-ink-950/5 px-3 py-2 dark:bg-white/10">
             {formatINR(restaurant.priceForTwo)}

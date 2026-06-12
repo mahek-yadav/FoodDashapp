@@ -22,6 +22,17 @@ import vegBiryaniImg from "../assets/veg-biryani.jpg";
 import hyderabadiBiryaniImg from "../assets/hyderabadi-biryani.jpg";
 import heroFeast from "../assets/hero-feast.avif";
 import appPhone from "../assets/app-phone.svg";
+import chefArjunImg from "../assets/chef-arjun-kumar.avif";
+import chefPriyaImg from "../assets/chef-priya-sharma.webp";
+import chefRohanImg from "../assets/chef-rohan-mehta.webp";
+import chefNehaImg from "../assets/chef-neha-verma.webp";
+import chefAdityaImg from "../assets/chef-aditya-nair.png";
+import delhiTandoorExpressImg from "../assets/delhi-tandoor-express.jpg";
+import punjabZaikaImg from "../assets/punjab-zaika.webp";
+import kolkataKathiRollsImg from "../assets/kolkata-kathi-rolls.webp";
+import lucknowKebabJunctionImg from "../assets/lucknow-kebab-junction.jpg";
+import kerelaCoastalKitchenImg from "../assets/kerela-coastal-kitchen.webp";
+import gujaratThaliPalaceImg from "../assets/gujarat-thali-palace.jpg";
 
 export const assets = {
   heroFeast,
@@ -55,7 +66,7 @@ export const restaurants = [
     zone: "express",
     pureVeg: false,
     offers: ["40% OFF", "Free gulab jamun"],
-    image: biryaniImg,
+  image: biryaniImg,
     coordinates: { lat: 17.385, lng: 78.4867 },
     description: "Dum-style biryanis, slow-cooked gravies, and festive Hyderabadi classics.",
   },
@@ -100,7 +111,7 @@ export const restaurants = [
     slug: "delhi-tandoor-express",
     name: "Delhi Tandoor Express",
     city: "New Delhi",
-    cuisine: ["North Indian", "Tandoor"],
+    image: delhiTandoorExpressImg,
     rating: 4.5,
     reviews: 1890,
     priceForTwo: 560,
@@ -109,7 +120,6 @@ export const restaurants = [
     zone: "standard",
     pureVeg: false,
     offers: ["Tandoori combos", "15% OFF"],
-    image: paneerImg,
     coordinates: { lat: 28.6139, lng: 77.209 },
     description: "Smoky tikkas, butter-rich gravies, and breads pulled fresh from the tandoor.",
   },
@@ -127,7 +137,7 @@ export const restaurants = [
     zone: "central",
     pureVeg: false,
     offers: ["Thali saver", "Free lassi"],
-    image: paneerImg,
+    image: punjabZaikaImg,
     coordinates: { lat: 30.7333, lng: 76.7794 },
     description: "Dhaba-style dal, paneer, chole, and family thalis with generous portions.",
   },
@@ -145,7 +155,7 @@ export const restaurants = [
     zone: "express",
     pureVeg: false,
     offers: ["Roll carnival", "25% OFF"],
-    image: chaatImg,
+    image: kolkataKathiRollsImg,
     coordinates: { lat: 22.5726, lng: 88.3639 },
     description: "Flaky parathas, smoky fillings, kasundi, and fast-moving roll counters.",
   },
@@ -181,7 +191,7 @@ export const restaurants = [
     zone: "outskirts",
     pureVeg: false,
     offers: ["Kebab platter", "₹100 OFF"],
-    image: biryaniImg,
+    image: lucknowKebabJunctionImg,
     coordinates: { lat: 26.8467, lng: 80.9462 },
     description: "Galouti-inspired plates, fragrant rice, and old-city spice blends.",
   },
@@ -199,7 +209,7 @@ export const restaurants = [
     zone: "standard",
     pureVeg: false,
     offers: ["Coastal bowls", "Free appam"],
-    image: dosaImg,
+    image: kerelaCoastalKitchenImg,
     coordinates: { lat: 9.9312, lng: 76.2673 },
     description: "Coconut-forward curries, appam, pepper fry, and coastal comfort plates.",
   },
@@ -217,13 +227,13 @@ export const restaurants = [
     zone: "central",
     pureVeg: true,
     offers: ["Unlimited thali", "Sweet of the day"],
-    image: dessertImg,
+    image: gujaratThaliPalaceImg,
     coordinates: { lat: 23.0225, lng: 72.5714 },
     description: "Balanced thalis, farsan, dal, kadhi, rotli, and happy festival specials.",
   },
 ];
 
-const baseMenu = [
+export const baseMenu = [
   {
     id: "paneer-butter-masala",
     name: "Paneer Butter Masala",
@@ -503,11 +513,11 @@ export const dishes = baseMenu.map((dish, index) => ({
 }));
 
 export const chefs = [
-  { id: "arjun-kumar", name: "Chef Arjun Kumar", speciality: "North Indian Cuisine", image: paneerImg, rating: 4.9 },
-  { id: "priya-sharma", name: "Chef Priya Sharma", speciality: "South Indian Cuisine", image: dosaImg, rating: 4.9 },
-  { id: "rohan-mehta", name: "Chef Rohan Mehta", speciality: "Street Food", image: chaatImg, rating: 4.8 },
-  { id: "neha-verma", name: "Chef Neha Verma", speciality: "Mughlai Cuisine", image: biryaniImg, rating: 4.8 },
-  { id: "aditya-nair", name: "Chef Aditya Nair", speciality: "Coastal Cuisine", image: dosaImg, rating: 4.7 },
+  { id: "arjun-kumar", name: "Chef Arjun Kumar", speciality: "North Indian Cuisine", image: chefArjunImg, rating: 4.9 },
+  { id: "priya-sharma", name: "Chef Priya Sharma", speciality: "South Indian Cuisine", image: chefPriyaImg, rating: 4.9 },
+  { id: "rohan-mehta", name: "Chef Rohan Mehta", speciality: "Street Food", image: chefRohanImg, rating: 4.8 },
+  { id: "neha-verma", name: "Chef Neha Verma", speciality: "Mughlai Cuisine", image: chefNehaImg, rating: 4.8 },
+  { id: "aditya-nair", name: "Chef Aditya Nair", speciality: "Coastal Cuisine", image: chefAdityaImg, rating: 4.7 },
 ];
 
 export const offers = [

@@ -108,6 +108,18 @@
     background: rgb(var(--brand));
     color: rgb(17,20,24);
   }
+
+  /* An illustrious, semi-transparent pill for hero/tagline use */
+  .pill-illustrious {
+    @apply rounded-full px-3 py-1 text-xs font-black;
+    /* much more translucent white gradient */
+    background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+  /* black text for better contrast */
+  color: rgb(17,20,24);
+    box-shadow: 0 6px 18px rgba(2,6,7,0.06);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.35);
+  }
   
 
   /* Map legacy flame-* utilities to the new brand color so existing markup updates */
@@ -128,8 +140,36 @@
   }
 
   .bg-flame-gradient {
-    /* Use the brand yellow literal for the flame gradient */
-    background: linear-gradient(135deg, rgb(248 195 72) 0%, rgb(248 195 72) 100%);
+    /* Use the brand yellow literal for the flame gradient (now solid) */
+    background: rgb(248 195 72) !important;
+    color: rgb(17,20,24) !important;
+  }
+
+  /* Solid background utility for small icon tiles */
+  .icon-brand-bg {
+    background: rgb(248 195 72) !important;
+    color: rgb(17,20,24) !important;
+    box-shadow: 0 12px 36px rgba(var(--brand-rgb), 0.16);
+  }
+
+  /* Solid profile avatar background that uses the literal brand yellow */
+  .profile-brand-bg {
+    background: rgb(248 195 72);
+    color: rgb(17,20,24);
+    box-shadow: 0 18px 48px rgba(var(--brand-rgb), 0.18);
+  }
+
+  /* Profile card and profile page icons should use the brand yellow for consistency */
+  .page-shell .profile-icons,
+  .profile-icons {
+    color: rgb(var(--brand-rgb)) !important;
+  }
+
+  .page-shell .profile-icons svg,
+  .profile-icons svg {
+    stroke: currentColor !important;
+    /* keep fills transparent for outlined icons; if fills are present they will inherit currentColor */
+    fill: none;
   }
 
   .section-pad {
@@ -155,4 +195,5 @@
     background: linear-gradient(90deg, rgba(2,6,7,0.94) 0%, rgba(2,6,7,0.78) 28%, rgba(2,6,7,0.36) 46%, rgba(2,6,7,0) 68% );
     pointer-events: none;
   }
+
 }

@@ -7,7 +7,7 @@ export default function ProfileCard() {
   return (
     <div className="glass-panel rounded-[34px] p-6">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-        <span className="grid h-24 w-24 place-items-center rounded-[30px] bg-flame-gradient font-display text-3xl font-black text-ink-950">
+        <span className="grid h-24 w-24 place-items-center rounded-[30px] profile-brand-bg font-display text-3xl font-black text-ink-950">
           {profile.avatar}
         </span>
         <div className="min-w-0 flex-1">
