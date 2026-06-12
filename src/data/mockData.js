@@ -10,6 +10,16 @@ import dessertImg from "../assets/dessert-bowl.jpg";
 import gulabJamunImg from "../assets/gulab-jamun.webp";
 import rasmalaiImg from "../assets/rasmalai-optimized.jpg";
 import beverageImg from "../assets/beverage.jpg";
+import butterNaanImg from "../assets/butter-naan.jpg";
+import dalMakhaniImg from "../assets/dal-makhani.jpg";
+import choleBhatureImg from "../assets/chole-bhature.jpg";
+import pavBhajiImg from "../assets/pav-bhaji.jpg";
+import vadaPavImg from "../assets/vada-pav.jpg";
+import dabeliImg from "../assets/dabeli.avif";
+import mysoreDosaImg from "../assets/mysore-dosa.jpg";
+import idliSambarImg from "../assets/idli-sambar.jpg";
+import vegBiryaniImg from "../assets/veg-biryani.jpg";
+import hyderabadiBiryaniImg from "../assets/hyderabadi-biryani.jpg";
 import heroFeast from "../assets/hero-feast.avif";
 import appPhone from "../assets/app-phone.svg";
 
@@ -233,7 +243,7 @@ const baseMenu = [
     category: "North Indian",
     price: 220,
     restaurantId: "punjabi-zaika",
-    image: paneerImg,
+    image: dalMakhaniImg,
     veg: true,
     spice: "Mild",
     rating: 4.7,
@@ -245,7 +255,7 @@ const baseMenu = [
     category: "North Indian",
     price: 60,
     restaurantId: "delhi-tandoor-express",
-    image: paneerImg,
+    image: butterNaanImg,
     veg: true,
     spice: "Mild",
     rating: 4.4,
@@ -257,7 +267,7 @@ const baseMenu = [
     category: "North Indian",
     price: 180,
     restaurantId: "punjabi-zaika",
-    image: chaatImg,
+    image: choleBhatureImg,
     veg: true,
     spice: "Medium",
     rating: 4.6,
@@ -282,7 +292,7 @@ const baseMenu = [
     category: "South Indian",
     price: 140,
     restaurantId: "chennai-dosa-corner",
-    image: dosaImg,
+    image: mysoreDosaImg,
     veg: true,
     spice: "Spicy",
     rating: 4.8,
@@ -294,7 +304,7 @@ const baseMenu = [
     category: "South Indian",
     price: 90,
     restaurantId: "chennai-dosa-corner",
-    image: dosaImg,
+    image: idliSambarImg,
     veg: true,
     spice: "Mild",
     rating: 4.6,
@@ -306,7 +316,7 @@ const baseMenu = [
     category: "Street Food",
     price: 150,
     restaurantId: "mumbai-masala-street",
-    image: chaatImg,
+    image: pavBhajiImg,
     veg: true,
     spice: "Medium",
     rating: 4.8,
@@ -319,7 +329,7 @@ const baseMenu = [
     category: "Street Food",
     price: 50,
     restaurantId: "mumbai-masala-street",
-    image: chaatImg,
+    image: vadaPavImg,
     veg: true,
     spice: "Spicy",
     rating: 4.7,
@@ -331,7 +341,7 @@ const baseMenu = [
     category: "Street Food",
     price: 60,
     restaurantId: "mumbai-masala-street",
-    image: chaatImg,
+    image: dabeliImg,
     veg: true,
     spice: "Medium",
     rating: 4.5,
@@ -356,7 +366,7 @@ const baseMenu = [
     category: "Biryani",
     price: 350,
     restaurantId: "royal-biryani-house",
-    image: biryaniImg,
+    image: hyderabadiBiryaniImg,
     veg: false,
     spice: "Spicy",
     rating: 4.9,
@@ -369,7 +379,7 @@ const baseMenu = [
     category: "Biryani",
     price: 250,
     restaurantId: "gujarat-thali-palace",
-    image: biryaniImg,
+    image: vegBiryaniImg,
     veg: true,
     spice: "Medium",
     rating: 4.5,
