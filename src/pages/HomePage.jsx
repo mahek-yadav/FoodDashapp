@@ -25,6 +25,8 @@ export default function HomePage() {
           style={{ backgroundImage: `url(${assets.heroFeast})`, backgroundPosition: 'right center' }}
           aria-hidden="true"
         />
+        {/* left-side fade overlay for contrast */}
+        <div className="absolute inset-0 hero-left-fade" aria-hidden="true" />
         <div className="page-shell relative grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[.95fr_1.05fr]">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
             <span className="pill mb-5 pill-brand backdrop-blur-xl">
