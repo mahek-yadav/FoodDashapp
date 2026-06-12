@@ -128,8 +128,8 @@
   }
 
   .bg-flame-gradient {
-    /* Start with the brand yellow and transition to a slightly darker brand-derived orange */
-    background: linear-gradient(135deg, rgb(var(--brand)) 0%, rgb(218,155,52) 100%);
+    /* Use the brand yellow for the flame gradient to keep a consistent yellow tone */
+    background: linear-gradient(135deg, rgb(var(--brand)) 0%, rgb(var(--brand)) 100%);
   }
 
   .section-pad {
