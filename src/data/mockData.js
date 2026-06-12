@@ -3,7 +3,9 @@ import dosaImg from "../assets/dosa-plate.jpg";
 import paneerImg from "../assets/paneer-curry.jpg";
 import chaatImg from "../assets/street-chaat.jpg";
 import pizzaImg from "../assets/pizza-slice.jpg";
+import burgerImg from "../assets/burger.webp";
 import dessertImg from "../assets/dessert-bowl.jpg";
+import beverageImg from "../assets/beverage.jpg";
 import heroFeast from "../assets/hero-feast.avif";
 import appPhone from "../assets/app-phone.svg";
 
@@ -19,9 +21,9 @@ export const categories = [
   { id: "biryani", name: "Biryani", image: biryaniImg, accent: "rgb(248,195,72)" },
   { id: "chinese", name: "Chinese", image: chaatImg, accent: "rgb(230,160,60)" },
   { id: "pizza", name: "Pizza", image: pizzaImg, accent: "rgb(218,155,52)" },
-  { id: "burgers", name: "Burgers", image: pizzaImg, accent: "#35c46f" },
+  { id: "burgers", name: "Burgers", image: burgerImg, accent: "#35c46f" },
   { id: "desserts", name: "Desserts", image: dessertImg, accent: "rgb(248,195,72)" },
-  { id: "beverages", name: "Beverages", image: dessertImg, accent: "#35c46f" },
+  { id: "beverages", name: "Beverages", image: beverageImg, accent: "#35c46f" },
 ];
 
 export const restaurants = [
