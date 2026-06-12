@@ -128,8 +128,8 @@
   }
 
   .bg-flame-gradient {
-    /* Use the brand yellow for the flame gradient to keep a consistent yellow tone */
-    background: linear-gradient(135deg, rgb(var(--brand)) 0%, rgb(var(--brand)) 100%);
+    /* Use the brand yellow literal for the flame gradient */
+    background: linear-gradient(135deg, rgb(248 195 72) 0%, rgb(248 195 72) 100%);
   }
 
   .section-pad {
