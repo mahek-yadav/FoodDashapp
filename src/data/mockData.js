@@ -4,6 +4,7 @@ import paneerImg from "../assets/paneer-curry.jpg";
 import chaatImg from "../assets/street-chaat.jpg";
 import hakkaImg from "../assets/hakka-noodles.jpg";
 import pizzaImg from "../assets/pizza-slice.jpg";
+import vegManchurianImg from "../assets/veg-manchurian.jpg";
 import burgerImg from "../assets/burger.webp";
 import dessertImg from "../assets/dessert-bowl.jpg";
 import beverageImg from "../assets/beverage.jpg";
@@ -390,7 +391,7 @@ const baseMenu = [
     category: "Chinese",
     price: 200,
     restaurantId: "spice-curry-cafe",
-    image: chaatImg,
+    image: vegManchurianImg,
     veg: true,
     spice: "Spicy",
     rating: 4.4,
