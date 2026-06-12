@@ -429,7 +429,7 @@ const baseMenu = [
     category: "Western Foods Available In India",
     price: 199,
     restaurantId: "mumbai-masala-street",
-    image: pizzaImg,
+    image: burgerImg,
     veg: true,
     spice: "Medium",
     rating: 4.4,
