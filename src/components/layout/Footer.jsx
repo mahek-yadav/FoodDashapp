@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="page-shell grid gap-10 py-12 lg:grid-cols-[1.3fr_.8fr_.8fr_.8fr]">
         <div>
           <Link to="/" className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-flame-gradient font-black text-ink-950">
+            <span className="grid h-12 w-12 place-items-center rounded-2xl brand-icon font-black">
               FD
             </span>
             <span className="font-display text-2xl font-black">FoodDash</span>

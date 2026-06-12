@@ -52,7 +52,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 border-b border-ink-900/10 bg-cream/80 backdrop-blur-2xl dark:border-white/10 dark:bg-ink-950/75">
       <div className="page-shell flex h-20 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3">
-          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-flame-gradient text-xl font-black text-ink-950 shadow-glow">
+          <span className="grid h-12 w-12 place-items-center rounded-2xl brand-icon text-xl font-black">
             FD
           </span>
           <span className="hidden sm:block">
