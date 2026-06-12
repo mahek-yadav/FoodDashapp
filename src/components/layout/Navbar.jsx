@@ -92,13 +92,13 @@ export default function Navbar() {
               </span>
             ) : null}
           </Link>
-          <button
-            className="focus-ring h-11 w-11 rounded-full bg-white/70 text-ink-900 transition hover:text-flame-600 dark:bg-white/10 dark:text-cream"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="mx-auto" size={19} /> : <Moon className="mx-auto" size={19} />}
-          </button>
+         <button
+          className="focus-ring h-11 w-11 rounded-full bg-white/70 text-ink-900 transition hover:text-flame-600 dark:bg-white/10 dark:text-cream"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+         >
+         {theme === "dark" ? <Sun className="mx-auto" size={19} /> : <Moon className="mx-auto" size={19} />}
+         </button>
           <button
             className="focus-ring relative hidden h-11 w-11 rounded-full bg-ink-950 text-cream transition hover:bg-flame-500 hover:text-ink-950 dark:bg-cream dark:text-ink-950 md:block"
             onClick={() => setCartOpen(true)}
