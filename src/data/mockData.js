@@ -8,7 +8,7 @@ import vegManchurianImg from "../assets/veg-manchurian.jpg";
 import burgerImg from "../assets/burger.webp";
 import dessertImg from "../assets/dessert-bowl.jpg";
 import gulabJamunImg from "../assets/gulab-jamun.webp";
-import rasmalaiImg from "../assets/rasmalai.jpg";
+import rasmalaiImg from "../assets/rasmalai-optimized.jpg";
 import beverageImg from "../assets/beverage.jpg";
 import heroFeast from "../assets/hero-feast.avif";
 import appPhone from "../assets/app-phone.svg";
