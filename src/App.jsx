@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from 'react';
 import AppLayout from "./components/layout/AppLayout";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
@@ -20,7 +21,15 @@ import NotFoundPage from "./pages/NotFoundPage";
 export default function App() {
   const location = useLocation();
 
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
+    
     <>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

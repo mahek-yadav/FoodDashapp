@@ -98,18 +98,18 @@ export default function Navbar() {
           aria-label="Toggle theme"
          >
          {theme === "dark" ? <Sun className="mx-auto" size={19} /> : <Moon className="mx-auto" size={19} />}
-         </button>
+        </button>
           <button
-            className="focus-ring relative hidden h-11 w-11 rounded-full bg-ink-950 text-cream transition hover:bg-flame-500 hover:text-ink-950 dark:bg-cream dark:text-ink-950 md:block"
-            onClick={() => setCartOpen(true)}
-            aria-label="Open cart"
+           className="focus-ring relative hidden h-11 w-11 rounded-full bg-white/70 text-ink-900 transition hover:text-flame-600 dark:bg-white/10 dark:text-cream md:block"
+           onClick={() => setCartOpen(true)}
+           aria-label="Open cart"
           >
-            <ShoppingBag className="mx-auto" size={19} />
-            {itemCount ? (
-              <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-flame-400 px-1 text-[10px] font-black text-ink-950">
-                {itemCount}
-              </span>
-            ) : null}
+           <ShoppingBag className="mx-auto" size={19} />
+           {itemCount ? (
+            <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-flame-400 px-1 text-[10px] font-black text-ink-950">
+             {itemCount}
+            </span>
+           ) : null}
           </button>
           <Link
             to="/profile"
