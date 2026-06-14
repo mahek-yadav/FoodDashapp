@@ -203,38 +203,32 @@ FoodDash/
 #  Screenshots
 
 ## Home Page
-
 <img width="2938" height="1658" alt="image" src="https://github.com/user-attachments/assets/9d32d6a1-68fa-4c51-9588-800f9b3a1193" />
-
-## Restaurant Listing
-
 <img width="2924" height="1660" alt="image" src="https://github.com/user-attachments/assets/a24acfab-6fee-4749-83be-244b1684760a" />
 <img width="2922" height="1242" alt="image" src="https://github.com/user-attachments/assets/269d5aa2-bcbd-4e56-b789-a438a44317ed" />
+<img width="2202" height="1654" alt="image" src="https://github.com/user-attachments/assets/0148de83-52ae-4062-beea-70bb86d2f759" />
+<img width="2140" height="1614" alt="image" src="https://github.com/user-attachments/assets/c798ae7b-9388-4e03-8e48-dcebc01889e6" />
+<img width="2210" height="1664" alt="image" src="https://github.com/user-attachments/assets/e810695c-1e1a-41f8-a6ee-26807c9999cb" />
+<img width="2248" height="606" alt="image" src="https://github.com/user-attachments/assets/0ba3befc-9aa6-4b91-bd7e-1c6558eb8fe7" />
 
+## Restaurant Listing
+<img width="2266" height="1540" alt="image" src="https://github.com/user-attachments/assets/fd3af711-5f9a-4a9e-9285-6add45c05ca2" />
+<img width="2168" height="1520" alt="image" src="https://github.com/user-attachments/assets/80342dbd-9171-4d79-825b-08d75ec32f4e" />
+<img width="2124" height="1438" alt="image" src="https://github.com/user-attachments/assets/be341bb4-2759-4d3e-a34c-65443b3017af" />
 
 ## Dish Customization
+<img width="2064" height="954" alt="image" src="https://github.com/user-attachments/assets/a138aa05-cd8e-4a0e-b939-17df14a0fc4e" />
+<img width="2152" height="1240" alt="image" src="https://github.com/user-attachments/assets/336d2bae-5e84-42d2-9837-822aaab77c3b" />
 
-```md
-![Dish Builder](./screenshots/customization.png)
-```
-
-## Shopping Cart
-
-```md
-![Cart](./screenshots/cart.png)
-```
+## Shopping cart
+<img width="806" height="1656" alt="image" src="https://github.com/user-attachments/assets/5bf3dbe8-1a07-4fb4-8be4-7a2f78fc7544" />
 
 ## Checkout Flow
-
-```md
-![Checkout](./screenshots/checkout.png)
-```
+<img width="2130" height="1322" alt="image" src="https://github.com/user-attachments/assets/13e0f21d-bc28-40e7-807a-3201d762209d" />
 
 ## Order Tracking
+<img width="2194" height="1600" alt="image" src="https://github.com/user-attachments/assets/8c452507-c011-45c4-ae88-8dc9524d7c1c" />
 
-```md
-![Tracking](./screenshots/tracking.png)
-```
 
 ---
 
