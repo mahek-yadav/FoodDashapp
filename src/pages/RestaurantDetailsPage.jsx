@@ -27,8 +27,9 @@ export default function RestaurantDetailsPage() {
     [restaurant],
   );
 
+  // CRASH-PROOFED: Safely filters out empty or undefined categories
   const menuCategories = useMemo(
-    () => Array.from(new Set(restaurantDishes.map((dish) => dish.category))),
+    () => Array.from(new Set(restaurantDishes.map((dish) => dish?.category).filter(Boolean))),
     [restaurantDishes],
   );
 
@@ -37,6 +38,8 @@ export default function RestaurantDetailsPage() {
   }, [menuCategories]);
 
   useEffect(() => {
+    if (!menuCategories.length) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.find((entry) => entry.isIntersecting);
@@ -44,10 +47,12 @@ export default function RestaurantDetailsPage() {
           setActiveCategory(visible.target.dataset.category);
         }
       },
-      { rootMargin: "-150px 0px -45% 0px", threshold: 0.2 },
+      { rootMargin: "-100px 0px -50% 0px", threshold: 0.1 },
     );
 
-    Object.values(sectionRefs.current).forEach((element) => {
+    // CRASH-PROOFED: Ensures keys exist before trying to observe them
+    Object.keys(sectionRefs.current).forEach((key) => {
+      const element = sectionRefs.current[key];
       if (element) observer.observe(element);
     });
 
@@ -67,6 +72,7 @@ export default function RestaurantDetailsPage() {
 
   return (
     <PageTransition>
+      {/* 1. Header Banner Block */}
       <section className="relative overflow-hidden bg-ink-950 text-cream">
         <img src={restaurant.image} alt={restaurant.name} className="absolute inset-0 h-full w-full object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/70 to-ink-950/30" />
@@ -76,7 +82,7 @@ export default function RestaurantDetailsPage() {
           </Link>
           <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-end">
             <div>
-              <span className="pill pill-brand">{restaurant.offers[0]}</span>
+              <span className="pill pill-brand">{restaurant.offers?.[0] || "Special Offer"}</span>
               <h1 className="mt-5 font-display text-5xl font-black leading-tight sm:text-6xl">{restaurant.name}</h1>
               <p className="mt-4 max-w-3xl text-base leading-8 text-cream/70">{restaurant.description}</p>
               <div className="mt-7 flex flex-wrap gap-3">
@@ -127,38 +133,44 @@ export default function RestaurantDetailsPage() {
         </div>
       </section>
 
-      <StickyCategoryMenu categories={menuCategories} activeCategory={activeCategory} onSelect={scrollToCategory} />
+      {/* 2. Sticky Tracking Menu Context */}
+      <div className="relative overflow-visible w-full">
+        
+        <StickyCategoryMenu categories={menuCategories} activeCategory={activeCategory} onSelect={scrollToCategory} />
 
-      <section className="section-pad">
-        <div className="page-shell">
-          {menuCategories.map((category) => {
-            const categoryDishes = restaurantDishes.filter((dish) => dish.category === category);
-            return (
-              <section
-                key={category}
-                id={category}
-                data-category={category}
-                ref={(node) => {
-                  sectionRefs.current[category] = node;
-                }}
-                className="scroll-mt-40 pb-12"
-              >
-                <div className="mb-5 flex items-end justify-between">
-                  <div>
-                    <p className="text-sm font-black uppercase text-flame-600 dark:text-flame-300">{categoryDishes.length} items</p>
-                    <h2 className="font-display text-3xl font-black text-ink-950 dark:text-cream">{category}</h2>
+        <section className="section-pad">
+          <div className="page-shell">
+            {menuCategories.map((category) => {
+              const categoryDishes = restaurantDishes.filter((dish) => dish.category === category);
+              return (
+                <section
+                  key={category}
+                  id={category}
+                  data-category={category}
+                  ref={(node) => {
+                    if (node) sectionRefs.current[category] = node;
+                  }}
+                  className="scroll-mt-28 pb-12"
+                >
+                  <div className="mb-5 flex items-end justify-between">
+                    <div>
+                      <p className="text-sm font-black uppercase text-flame-600 dark:text-flame-300">{categoryDishes.length} items</p>
+                      <h2 className="font-display text-3xl font-black text-ink-950 dark:text-cream">{category}</h2>
+                    </div>
                   </div>
-                </div>
-                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                  {categoryDishes.map((dish, index) => (
-                    <DishCard key={dish.id} dish={dish} index={index} onCustomize={setActiveDish} />
-                  ))}
-                </div>
-              </section>
-            );
-          })}
-        </div>
-      </section>
+                  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {categoryDishes.map((dish, index) => (
+                      <DishCard key={dish.id} dish={dish} index={index} onCustomize={setActiveDish} />
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        </section>
+        
+      </div>
+      
       <DishCustomizationModal dish={activeDish} onClose={() => setActiveDish(null)} />
     </PageTransition>
   );

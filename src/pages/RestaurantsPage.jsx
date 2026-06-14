@@ -28,30 +28,47 @@ export default function RestaurantsPage() {
   const [loading, setLoading] = useState(false);
   const sentinelRef = useRef(null);
 
+  // Crash-proofed extraction of cuisine variants
   const cuisineOptions = useMemo(
-    () => ["All", ...Array.from(new Set(restaurants.flatMap((restaurant) => restaurant.cuisine)))],
+    () => ["All", ...Array.from(new Set((restaurants || []).flatMap((r) => r?.cuisine || [])))],
     [],
   );
 
   const filteredRestaurants = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    const filtered = restaurants.filter((restaurant) => {
+    
+    const filtered = (restaurants || []).filter((restaurant) => {
+      if (!restaurant) return false;
+
+      // Crash-proof text assembly for the search feature
       const matchesQuery =
         !normalized ||
-        [restaurant.name, restaurant.city, restaurant.description, ...restaurant.cuisine]
+        [
+          restaurant.name || "",
+          restaurant.city || "",
+          restaurant.description || "",
+          ...(restaurant.cuisine || []),
+        ]
           .join(" ")
           .toLowerCase()
           .includes(normalized);
-      const matchesCuisine = filters.cuisine === "All" || restaurant.cuisine.includes(filters.cuisine);
-      const matchesRating = restaurant.rating >= Number(filters.minRating);
-      const matchesPrice = restaurant.priceForTwo <= Number(filters.maxPrice);
-      const matchesDelivery = restaurant.deliveryTime <= Number(filters.maxDelivery);
+
+      const matchesCuisine = 
+        filters.cuisine === "All" || 
+        (restaurant.cuisine && restaurant.cuisine.includes(filters.cuisine));
+        
+      const matchesRating = (restaurant.rating || 0) >= Number(filters.minRating);
+      const matchesPrice = (restaurant.priceForTwo || 0) <= Number(filters.maxPrice);
+      const matchesDelivery = (restaurant.deliveryTime || 0) <= Number(filters.maxDelivery);
+      
       const matchesDiet =
         filters.dietary === "All" ||
         (filters.dietary === "Pure Veg" && restaurant.pureVeg) ||
         (filters.dietary === "Non-Vegetarian" && !restaurant.pureVeg);
-      const matchesOffers = !filters.offersOnly || restaurant.offers.length > 0;
-      const matchesDistance = restaurant.distanceKm <= Number(filters.maxDistance);
+        
+      // Crash-proof check for offers array existence
+      const matchesOffers = !filters.offersOnly || (restaurant.offers && restaurant.offers.length > 0);
+      const matchesDistance = (restaurant.distanceKm || 0) <= Number(filters.maxDistance);
 
       return (
         matchesQuery &&
@@ -66,11 +83,11 @@ export default function RestaurantsPage() {
     });
 
     return [...filtered].sort((a, b) => {
-      if (filters.sort === "Rating") return b.rating - a.rating;
-      if (filters.sort === "Delivery Time") return a.deliveryTime - b.deliveryTime;
-      if (filters.sort === "Price") return a.priceForTwo - b.priceForTwo;
-      if (filters.sort === "Distance") return a.distanceKm - b.distanceKm;
-      return b.reviews - a.reviews;
+      if (filters.sort === "Rating") return (b.rating || 0) - (a.rating || 0);
+      if (filters.sort === "Delivery Time") return (a.deliveryTime || 0) - (b.deliveryTime || 0);
+      if (filters.sort === "Price") return (a.priceForTwo || 0) - (b.priceForTwo || 0);
+      if (filters.sort === "Distance") return (a.distanceKm || 0) - (b.distanceKm || 0);
+      return (b.reviews || 0) - (a.reviews || 0);
     });
   }, [filters, query]);
 

@@ -1,8 +1,32 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function StickyCategoryMenu({ categories, activeCategory, onSelect }) {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Pin the menu bar as soon as the user scrolls past 400px (the typical banner height)
+      if (window.scrollY > 400) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="sticky top-20 z-30 border-y border-ink-900/10 bg-cream/85 py-3 backdrop-blur-2xl dark:border-white/10 dark:bg-ink-950/80">
+    <div 
+      className={[
+        "left-0 w-full z-50 border-y border-ink-900/10 bg-cream/95 py-3 backdrop-blur-2xl shadow-sm dark:border-white/10 dark:bg-ink-950/95 transition-all",
+        isFixed 
+          ? "fixed top-0 animate-fade-in" 
+          : "relative"
+      ].join(" ")}
+    >
       <div className="page-shell no-scrollbar flex gap-3 overflow-x-auto">
         {categories.map((category) => (
           <button
