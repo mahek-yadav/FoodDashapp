@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Filter, Sparkles } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Filter } from "lucide-react";
+import { useMemo, useState, useEffect } from "react"; // Added useEffect
 import { useSearchParams } from "react-router-dom";
 import EmptyState from "../components/common/EmptyState";
 import PageTransition from "../components/common/PageTransition";
@@ -13,10 +13,11 @@ import SearchBar from "../components/food/SearchBar";
 import { dishes, restaurants } from "../data/mockData";
 
 export default function SearchPage() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const urlCategory = decodeURIComponent(searchParams.get("category") ?? "");
-  const [query, setQuery] = useState(""); 
-  const activeSearchTerm = urlCategory || query;
+  
+  // Keep query state as the single source of truth for the active search text
+  const [query, setQuery] = useState(urlCategory); 
   const [activeDish, setActiveDish] = useState(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filters, setFilters] = useState({
@@ -26,29 +27,55 @@ export default function SearchPage() {
     minRating: 0,
   });
 
-  const normalized = activeSearchTerm.trim().toLowerCase();
+  // Sync state if the URL category changes (e.g. user clicks from Navbar/Home)
+  useEffect(() => {
+    if (urlCategory) {
+      setQuery(urlCategory);
+    }
+  }, [urlCategory]);
+
+  const normalized = query.trim().toLowerCase();
+
   const matchedDishes = useMemo(
     () =>
       dishes.filter((dish) => {
-        const text = [dish.name, dish.category, dish.description, dish.spice, ...dish.tags].join(" ").toLowerCase();
+        // Crash-proofed text generation (Safely handles missing fields or undefined tags)
+        const text = [
+          dish.name || "", 
+          dish.category || "", 
+          dish.description || "", 
+          dish.spice || "", 
+          ...(dish.tags || [])
+        ].join(" ").toLowerCase();
+
         const matchesQuery = !normalized || text.includes(normalized);
         const matchesVeg =
           filters.veg === "All" ||
           (filters.veg === "Vegetarian" && dish.veg) ||
           (filters.veg === "Non-Vegetarian" && !dish.veg);
         const matchesSpice = filters.spice === "All" || dish.spice === filters.spice;
-        return matchesQuery && matchesVeg && matchesSpice && dish.price <= filters.maxPrice && dish.rating >= filters.minRating;
+        return matchesQuery && matchesVeg && matchesSpice && (dish.price || 0) <= filters.maxPrice && (dish.rating || 0) >= filters.minRating;
       }),
     [filters, normalized],
   );
 
   const matchedRestaurants = useMemo(
     () =>
-      restaurants.filter((restaurant) =>
-        [restaurant.name, restaurant.city, ...restaurant.cuisine].join(" ").toLowerCase().includes(normalized),
-      ),
+      restaurants.filter((restaurant) => {
+        return [
+          restaurant.name || "", 
+          restaurant.city || "", 
+          ...(restaurant.cuisine || [])
+        ].join(" ").toLowerCase().includes(normalized);
+      }),
     [normalized],
   );
+
+  const handleSelectCategory = (categoryName) => {
+    setQuery(categoryName);
+    // Sync the URL bar so everything stays aligned
+    setSearchParams({ category: categoryName });
+  };
 
   const suggestions = ["Hyderabadi Biryani", "Masala Dosa", "Pav Bhaji", "Paneer Butter Masala", "Rasmalai"];
 
@@ -68,14 +95,15 @@ export default function SearchPage() {
               <button
                 key={suggestion}
                 type="button"
-                onClick={() => setQuery(suggestion)}
+                onClick={() => handleSelectCategory(suggestion)}
                 className="pill pill-brand"
               >
                 {suggestion}
               </button>
             ))}
           </div>
-          <CategorySlider activeCategory={query} compact onSelect={(category) => setQuery(category.name)} />
+          {/* Linked to handleSelectCategory to clear up conflicting parameter values */}
+          <CategorySlider activeCategory={query} compact onSelect={(category) => handleSelectCategory(category.name)} />
         </div>
 
         <AnimatePresence>
