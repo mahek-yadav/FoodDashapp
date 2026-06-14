@@ -14,8 +14,9 @@ import { dishes, restaurants } from "../data/mockData";
 
 export default function SearchPage() {
   const [searchParams] = useSearchParams();
-  const initialCategory = searchParams.get("category") ?? "";
-  const [query, setQuery] = useState(initialCategory);
+  const urlCategory = decodeURIComponent(searchParams.get("category") ?? "");
+  const [query, setQuery] = useState(""); 
+  const activeSearchTerm = urlCategory || query;
   const [activeDish, setActiveDish] = useState(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filters, setFilters] = useState({
@@ -25,7 +26,7 @@ export default function SearchPage() {
     minRating: 0,
   });
 
-  const normalized = query.trim().toLowerCase();
+  const normalized = activeSearchTerm.trim().toLowerCase();
   const matchedDishes = useMemo(
     () =>
       dishes.filter((dish) => {
