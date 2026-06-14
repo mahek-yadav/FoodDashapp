@@ -207,13 +207,16 @@ FoodDash/
 Add screenshot here:
 
 ```md
-![Home Page](./screenshots/home.png)
+<img width="2938" height="1658" alt="image" src="https://github.com/user-attachments/assets/9d32d6a1-68fa-4c51-9588-800f9b3a1193" />
+
 ```
 
 ## Restaurant Listing
 
 ```md
-![Restaurant Listing](./screenshots/restaurants.png)
+<img width="2924" height="1660" alt="image" src="https://github.com/user-attachments/assets/a24acfab-6fee-4749-83be-244b1684760a" />
+<img width="2922" height="1242" alt="image" src="https://github.com/user-attachments/assets/269d5aa2-bcbd-4e56-b789-a438a44317ed" />
+
 ```
 
 ## Dish Customization
@@ -247,13 +250,13 @@ Add screenshot here:
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/fooddash.git
+git clone https://github.com/mahek-yadav/FoodDashapp.git
 ```
 
 ## 2. Navigate to Project Folder
 
 ```bash
-cd fooddash
+cd FoodDashapp
 ```
 
 ## 3. Install Dependencies
