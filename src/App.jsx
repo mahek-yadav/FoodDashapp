@@ -20,7 +20,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   const location = useLocation();
-
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
